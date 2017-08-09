@@ -18,6 +18,11 @@
     (format :hello-koko-pepe :using :snake-case) => :hello_koko_pepe)
 
   (fact
+    "from kebab to pascal case"
+    (format :hello-koko :using :pascal-case) => :HelloKoko
+    (format :hello-koko-pepe :using :pascal-case) => :HelloKokoPepe)
+
+  (fact
     "from kebab to kebab case"
     (format :hello-koko :using :kebab-case) => :hello-koko
     (format :hello-koko-pepe :using :kebab-case) => :hello-koko-pepe)
