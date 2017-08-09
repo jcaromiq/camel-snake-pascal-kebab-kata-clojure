@@ -2,8 +2,8 @@
   (:gen-class))
 
 (defn format-word [word]
-      (str (Character/toUpperCase (first word))
-           (apply str (rest word))))
+      (clojure.string/capitalize word))
+
 
 (defn to-camel-case [text]
       (let [words (clojure.string/split (name text) #"-")
