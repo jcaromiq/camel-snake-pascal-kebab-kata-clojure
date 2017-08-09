@@ -5,7 +5,7 @@
 
 (defn to-camel-case
   [words]
-  (str (first words) (str/join "" (map str/capitalize (rest words)))))
+  (str (str/lower-case (first words)) (str/join "" (map str/capitalize (rest words)))))
 
 (defn to-pascal-case
   [words]
@@ -13,7 +13,7 @@
 
 (defn to-snake-case
   [words]
-  (str/join "_" words))
+  (str/join "_" (map str/lower-case words)))
 
 (defn to-kebab-case
   [words]
