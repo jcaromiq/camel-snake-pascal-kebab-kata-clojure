@@ -5,7 +5,8 @@
 
 (defn to-camel-case
   [words]
-  (str (str/lower-case (first words)) (str/join "" (map str/capitalize (rest words)))))
+  (str (str/lower-case (first words))
+       (str/join "" (map str/capitalize (rest words)))))
 
 (defn to-pascal-case
   [words]
