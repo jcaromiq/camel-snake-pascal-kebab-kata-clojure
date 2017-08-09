@@ -13,7 +13,7 @@
                       rest-words-formatted))))
 (defn to-pascal-case [text]
       (let [words (clojure.string/split (name text) #"-")
-            words-formatted (apply str (map format-word words))]
+            words-formatted (apply str (map clojure.string/capitalize words))]
            (keyword words-formatted)))
 
 (defn to-snake-case
