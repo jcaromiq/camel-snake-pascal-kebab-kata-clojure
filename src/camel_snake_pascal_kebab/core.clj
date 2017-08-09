@@ -5,9 +5,7 @@
 
 (defn to-camel-case
   [words]
-  (let [rest-words (rest words)
-        rest-words-formatted (apply str (map str/capitalize rest-words))]
-    (str (first words) rest-words-formatted)))
+  (str (first words) (str/join "" (map str/capitalize (rest words)))))
 
 (defn to-pascal-case
   [words]
