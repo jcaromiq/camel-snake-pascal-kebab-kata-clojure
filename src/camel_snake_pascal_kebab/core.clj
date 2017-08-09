@@ -14,13 +14,17 @@
 (defn to-pascal-case [text]
       (let [words (clojure.string/split (name text) #"-")
             words-formatted (apply str (map format-word words))]
-           (keyword words-formatted))
-      )
+           (keyword words-formatted)))
+
+(defn to-snake-case
+      [text]
+      :hello_koko)
+
+(def formats
+  {:camel-case to-camel-case
+   :pascal-case to-pascal-case
+   :snake-case to-snake-case})
 
 (defn format
       [input _ format-to]
-      (if (= format-to :camel-case)
-        (to-camel-case input)
-        (if (= format-to :pascal-case)
-          (to-pascal-case input)
-          :hello_koko)))
+      ((get formats format-to) input))
