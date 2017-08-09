@@ -14,7 +14,8 @@
     )
   (fact
     "from kebab to snake case"
-    (format :hello-koko :using :snake-case) => :hello_koko)
+    (format :hello-koko :using :snake-case) => :hello_koko
+    (format :hello-koko-pepe :using :snake-case) => :hello_koko_pepe)
   (fact
     "from kebab to pascal case"
     (format :hello-koko :using :pascal-case) => :HelloKoko))
