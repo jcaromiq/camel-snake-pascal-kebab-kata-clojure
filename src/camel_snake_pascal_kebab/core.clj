@@ -16,10 +16,15 @@
   [words]
   (keyword (clojure.string/join "_" words)))
 
+(defn to-kebab-case
+  [words]
+  (keyword (clojure.string/join "-" words)))
+
 (def formats
   {:camel-case to-camel-case
    :pascal-case to-pascal-case
-   :snake-case to-snake-case})
+   :snake-case to-snake-case
+  :kebab-case to-kebab-case})
 
 (defn format
   [input _ format-to]
