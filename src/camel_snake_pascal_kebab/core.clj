@@ -2,14 +2,15 @@
   (:gen-class))
 
 
-(defn to-camel-case [words]
-      (let [rest-words (rest words)
-            rest-words-formatted (apply str (map clojure.string/capitalize rest-words))]
-           (keyword (str (first words) rest-words-formatted))))
+(defn to-camel-case
+  [words]
+  (let [rest-words (rest words)
+        rest-words-formatted (apply str (map clojure.string/capitalize rest-words))]
+    (keyword (str (first words) rest-words-formatted))))
 
-(defn to-pascal-case [words]
-      (let [words-formatted (apply str (map clojure.string/capitalize words))]
-           (keyword words-formatted)))
+(defn to-pascal-case
+  [words]
+  (keyword (apply str (map clojure.string/capitalize words))))
 
 (defn to-snake-case
   [words]
