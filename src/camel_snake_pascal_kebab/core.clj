@@ -3,18 +3,17 @@
 
 
 (defn to-camel-case [words]
-      (let [first-word (first words)
-            rest-words (rest words)
+      (let [rest-words (rest words)
             rest-words-formatted (apply str (map clojure.string/capitalize rest-words))]
-           (keyword (str first-word rest-words-formatted))))
+           (keyword (str (first words) rest-words-formatted))))
 
 (defn to-pascal-case [words]
       (let [words-formatted (apply str (map clojure.string/capitalize words))]
            (keyword words-formatted)))
 
 (defn to-snake-case
-      [words]
-      :hello_koko)
+  [words]
+  (keyword (clojure.string/join "_" words)))
 
 (def formats
   {:camel-case to-camel-case
