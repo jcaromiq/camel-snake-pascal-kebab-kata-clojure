@@ -1,15 +1,13 @@
 (ns camel-snake-pascal-kebab.core
   (:gen-class))
 
-(defn format-word [word]
-      (clojure.string/capitalize word))
 
 
 (defn to-camel-case [text]
       (let [words (clojure.string/split (name text) #"-")
             first-word (first words)
             rest-words (rest words)
-            rest-words-formatted (apply str (map format-word rest-words))]
+            rest-words-formatted (apply str (map clojure.string/capitalize rest-words))]
            (keyword (str
                       first-word
                       rest-words-formatted))))
